@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 
 class ExtraMethods
 {	   
@@ -131,15 +132,91 @@ class ExtraMethods
 
 	if( result == Int32.Parse( DrawingPlayerInputToScreen() ) )
 	{
-	     Console.ForegroundColor = ConsoleColor.Green;
-	     Console.WriteLine("CORRECT!");
+
+	   for( int i = 0; i < 2; i++ )
+	   {
+
+	     Console.BackgroundColor = ConsoleColor.Black;
+	     Console.Clear();
+	     Thread.Sleep(300);
+
+             Console.BackgroundColor = ConsoleColor.Cyan;
+	     Console.Clear();
+	     Thread.Sleep(300);
+
+	   }
+
+	   Console.BackgroundColor = ConsoleColor.Black;
+	   Console.ForegroundColor = ConsoleColor.Cyan;
+	   Console.Clear();
+	   ASCII.Correct( 0, 0 );
+
+	   Console.ReadKey(true);
+
 	}
 	
 	else 
 	{ 
-           Console.ForegroundColor = ConsoleColor.Red;
-           Console.WriteLine("WRONG!"); 
+
+	   for( int i = 0; i < 4; i++ )
+	   {
+
+	     Console.BackgroundColor = ConsoleColor.Black;
+	     Console.Clear();
+	     Thread.Sleep(300);
+
+             Console.BackgroundColor = ConsoleColor.Red;
+	     Console.Clear();
+	     Thread.Sleep(300);
+
+	   }
+
+	   Console.BackgroundColor = ConsoleColor.Black;
+	   Console.ForegroundColor = ConsoleColor.Red;
+	   Console.Clear();
+	   ASCII.Wrong( 0, 0 );
+
+	   Console.ReadKey(true);
+
 	}
+
+        if( AskPlayAgain() == true ) { MainClass.Main(); }
+        else{ Console.Clear(); Console.ForegroundColor = ConsoleColor.Cyan; Console.WriteLine("BYE!"); } 	
 	
    }
+
+   private static bool AskPlayAgain()
+   {
+ 
+       Console.CursorTop =+ 10;
+       Console.WriteLine("PLAY AGAIN?");
+   
+
+       bool loopSwitch = true;
+       bool playAgain = false;
+
+       while( loopSwitch )
+       {
+
+         switch( Console.ReadKey(true).KeyChar )
+         {
+
+             case 'y' : loopSwitch = false; playAgain = true;
+	     break;
+
+	     case 'n' : loopSwitch = false; playAgain = false;
+	     break;
+
+	     default : loopSwitch = true;
+	     break;
+       
+          }
+
+       }
+
+       return playAgain;
+
+
+   }
+
 }

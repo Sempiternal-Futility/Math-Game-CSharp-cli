@@ -387,4 +387,64 @@ class ASCII
 
    }
 
+   public static void Correct( short posXSum, short posYSum )
+   {
+
+        int posX = Console.CursorLeft + posXSum;
+	int posY = Console.CursorTop + posYSum;
+
+	
+	Console.CursorLeft = posX;
+	Console.CursorTop = posY;
+	Console.WriteLine(" ██████  ██████  ██████  ██████  ███████  ██████ ████████     ██");
+
+      	Console.CursorLeft = posX;
+	Console.CursorTop = posY + 1;
+	Console.WriteLine("██      ██    ██ ██   ██ ██   ██ ██      ██         ██        ██");
+
+	Console.CursorLeft = posX;
+	Console.CursorTop = posY + 2;
+	Console.WriteLine("██      ██    ██ ██████  ██████  █████   ██         ██        ██");
+
+	Console.CursorLeft = posX;
+	Console.CursorTop = posY + 3;
+	Console.WriteLine("██      ██    ██ ██   ██ ██   ██ ██      ██         ██          ");
+
+	Console.CursorLeft = posX;
+	Console.CursorTop = posY + 4;
+	Console.WriteLine(" ██████  ██████  ██   ██ ██   ██ ███████  ██████    ██        ██");
+
+   }
+
+   public static void Wrong( short posXSum, short posYSum )
+   {
+
+        int posX = Console.CursorLeft + posXSum;
+	int posY = Console.CursorTop + posYSum;
+
+
+	Console.CursorLeft = posX;
+	Console.CursorTop = posY;
+	Console.WriteLine("██     ██ ██████   ██████  ███    ██  ██████      ██");
+
+        Console.CursorLeft = posX;
+	Console.CursorTop = posY + 1;
+	Console.WriteLine("██     ██ ██   ██ ██    ██ ████   ██ ██           ██");
+
+  	Console.CursorLeft = posX;
+	Console.CursorTop = posY + 2;
+	Console.WriteLine("██  █  ██ ██████  ██    ██ ██ ██  ██ ██   ███     ██");
+
+	Console.CursorLeft = posX;
+	Console.CursorTop = posY + 3;
+	Console.WriteLine("██ ███ ██ ██   ██ ██    ██ ██  ██ ██ ██    ██       ");
+
+	Console.CursorLeft = posX;
+	Console.CursorTop = posY + 4;
+	Console.WriteLine(" ███ ███  ██   ██  ██████  ██   ████  ██████      ██");
+
+
+   }
+
+
 }

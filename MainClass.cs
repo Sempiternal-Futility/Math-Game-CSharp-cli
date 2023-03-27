@@ -3,7 +3,7 @@
 class MainClass : ExtraMethods
 {
  
-   //TODO:FIX BEING ABLE TO BACKSPACE TO ERASE
+   //TODO:
 
 
    public static bool plusEquation = false;
@@ -12,7 +12,7 @@ class MainClass : ExtraMethods
    public static int numberOne;
    public static int numberTwo;
  
-   static void Main()
+   public static void Main()
    {
 
 	Console.ForegroundColor = ConsoleColor.Cyan;
